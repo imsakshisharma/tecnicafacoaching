@@ -1,102 +1,201 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown, Phone, Mail, HelpCircle, MessageSquare, ArrowRight, ShieldCheck } from 'lucide-react';
 
 interface FaqItem {
-  q: string;
-  a: string;
+  id: string;
+  num: string;
+  category: string;
+  question: string;
+  answer: string;
 }
 
 const faqs: FaqItem[] = [
   {
-    q: 'What is the difference between Tecnica FA Coaching Ltd and Tecnica FA CIC?',
-    a: 'Tecnica FA Coaching Ltd is our dedicated technical coaching academy, delivering midweek technical development hubs, Brazilian futsal masterclasses, school curriculum P.E./PPA partnerships, private 1-2-1 coaching, and pro club showcases. Tecnica Football Academy CIC is the sister grassroots community club that operates competitive Sunday league teams.',
+    id: 'faq-1',
+    num: '01',
+    category: 'Organization & Ethos',
+    question: 'What is the difference between Tecnica FA Coaching Ltd and Tecnica FA CIC?',
+    answer: 'Tecnica FA Coaching Ltd is our dedicated technical coaching organization responsible for midweek development hubs, Brazilian futsal masterclasses, school curriculum P.E./PPA delivery, 1-on-1 private coaching, and pro club showcases. Tecnica Football Academy CIC is our sister community interest club managing competitive Sunday league grassroots teams.',
   },
   {
-    q: 'Can my child train with Tecnica FA Coaching while playing for another grassroots club?',
-    a: 'Yes, absolutely! The majority of players who attend our midweek academy hubs play for grassroots Sunday teams elsewhere. Our coaching does not clash with weekend grassroots clubs—it complements them by providing specialized technical training, high-rep ball mastery, and 1v1 skill development.',
+    id: 'faq-2',
+    num: '02',
+    category: 'Club Compatibility',
+    question: 'Can my child train with Tecnica FA Coaching while playing for another grassroots club?',
+    answer: 'Yes, 100%! Over 80% of players at our midweek academy hubs play for local Sunday grassroots teams. Our coaching syllabus is specifically designed to complement their weekend club matches by focusing intensely on individual ball mastery, 1v1 moves, and rapid decision-making.',
   },
   {
-    q: 'How does the free trial assessment work?',
-    a: 'We invite new players to attend a trial session at one of our hubs (Bromley, Beckenham, or West Wickham). Our UEFA B licensed coaching directors observe your child’s footwork mechanics, technical aptitude, and game awareness to place them in the optimal developmental group.',
+    id: 'faq-3',
+    num: '03',
+    category: 'Trials & Assessment',
+    question: 'How does the free trial assessment work?',
+    answer: 'We invite prospective players to attend a trial session at one of our hubs in Bromley, Beckenham, or West Wickham. Coaching directors Austin Berkley and Warren Berkley evaluate your child’s current mechanics, touch confidence, and speed of play to ensure they are grouped with peers of matching ability.',
   },
   {
-    q: 'What footwear and equipment are required?',
-    a: 'For our outdoor floodlit 3G pitches (Bromley & Shirley), players should wear moulded studs or astro turf boots (no metal studs). For indoor Futsal clinics, clean non-marking indoor trainers or futsal shoes are required. Shin guards and a labelled water bottle are mandatory for all sessions.',
+    id: 'faq-4',
+    num: '04',
+    category: 'Footwear & Equipment',
+    question: 'What footwear and kit are required for training?',
+    answer: 'For our floodlit outdoor 3G pitches (Bromley & Shirley), players must wear moulded studs or astro trainers (metal blades/studs are strictly prohibited). For indoor Brazilian futsal sessions, clean non-marking indoor trainers or futsal shoes are required. Shin guards and plenty of water are mandatory.',
   },
   {
-    q: 'Do you partner with primary and secondary schools for PPA cover?',
-    a: 'Yes! We deliver National Curriculum Physical Education lessons, PPA teacher release cover, morning breakfast clubs, and after-school clubs across West Wickham, Beckenham, Bromley, and Croydon. Contact Warren Berkley directly for a tailored school proposal.',
+    id: 'faq-5',
+    num: '05',
+    category: 'Educational Partnerships',
+    question: 'Do you partner with primary and secondary schools for PPA cover?',
+    answer: 'Yes! We deliver National Curriculum Physical Education lessons, PPA teacher release cover, morning breakfast clubs, and after-school clubs across West Wickham, Beckenham, Bromley, and Croydon. All coaches are fully qualified, DBS enhanced, and safeguarding certified.',
   },
   {
-    q: 'What age groups do you cater for across your programs?',
-    a: 'Our programs start with foundation kickers from age 4, running up to teenagers aged 16 in our elite development hubs and pro academy showcase squads. Private 1-2-1 clinics are also open to all ages from 6 to 18.',
+    id: 'faq-6',
+    num: '06',
+    category: 'Age Brackets',
+    question: 'What age groups do you accept across your coaching programs?',
+    answer: 'We cater for children from age 4 (Mini Kickers foundation movement) through to teenagers aged 16 in our elite development hubs and pro academy showcase squads. Private 1-to-1 masterclasses are also available for players aged 6 to 18.',
   },
 ];
 
 export default function FaqSection() {
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const [openId, setOpenId] = useState<string>('faq-1');
 
-  const toggle = (index: number) => {
-    setOpenIdx(openIdx === index ? null : index);
+  const toggle = (id: string) => {
+    setOpenId(openId === id ? '' : id);
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-24 bg-slate-50 border-b border-slate-200">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+    <section id="faq" className="py-20 lg:py-28 bg-slate-50 border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-navy-100 text-navy-900 border border-navy-200/80 px-3.5 py-1 rounded-full text-xs font-heading font-bold uppercase tracking-wider mb-4">
-            <HelpCircle className="w-3.5 h-3.5 text-navy-800" />
-            <span>Got Questions?</span>
-          </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-navy-950 uppercase tracking-tight mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Everything you need to know about our specialized coaching syllabus, hubs, schedule, and player pathways.
-          </p>
-        </div>
-
-        {/* Accordion Stack */}
-        <div className="space-y-4">
-          {faqs.map((faq, index) => {
-            const isOpen = openIdx === index;
-            return (
-              <div
-                key={index}
-                className="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all duration-200"
-              >
-                <button
-                  type="button"
-                  onClick={() => toggle(index)}
-                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-heading font-bold text-lg sm:text-xl text-navy-950 hover:text-navy-700 transition-colors"
-                  aria-expanded={isOpen}
-                >
-                  <span>{faq.q}</span>
-                  <div
-                    className={`w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 bg-gold-500 text-navy-950' : 'text-slate-600'
-                    }`}
-                  >
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </button>
-
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100">
-                    <p>{faq.a}</p>
-                  </div>
-                )}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+          
+          {/* Left Column: Sticky Support Hub Card (5 Cols) */}
+          <div className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28">
+            
+            <div className="bg-navy-950 rounded-3xl p-8 sm:p-10 text-white shadow-xl border border-navy-800">
+              
+              <div className="inline-flex items-center gap-2 bg-navy-900 text-gold-400 border border-navy-800 px-3.5 py-1 rounded-full text-xs font-heading font-bold uppercase tracking-wider mb-6">
+                <HelpCircle className="w-3.5 h-3.5" />
+                <span>Knowledge Base</span>
               </div>
-            );
-          })}
+
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl uppercase tracking-tight text-white mb-4 leading-tight">
+                Got Questions? <br />
+                <span className="text-gold-400">We Have Answers.</span>
+              </h2>
+
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+                Everything you need to know about our coaching syllabus, trial assessments, school partnerships, and hub locations across South London.
+              </p>
+
+              {/* Direct Help Callout Box */}
+              <div className="bg-navy-900/90 rounded-2xl p-5 border border-white/10 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-gold-500 text-navy-950 flex items-center justify-center font-bold flex-shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-heading font-bold text-sm text-white uppercase leading-none">
+                      Speak Directly With Operations
+                    </h4>
+                    <p className="text-xs text-slate-400 mt-1">
+                      Warren Berkley &bull; <a href="tel:07456528812" className="text-gold-400 font-bold hover:underline">07456 528 812</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                  <span>Questions about age groups?</span>
+                  <a href="#contact" className="text-gold-400 font-bold hover:underline flex items-center gap-1">
+                    <span>Contact Us</span> &rarr;
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Quick Venue Directory Tag */}
+            <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                <span className="text-xs text-slate-700 font-medium">
+                  <strong>4 Active Hubs:</strong> Bromley, Beckenham, West Wickham &amp; Shirley
+                </span>
+              </div>
+              <a href="#contact" className="text-xs font-heading font-bold uppercase text-navy-900 hover:text-gold-600 whitespace-nowrap">
+                View Maps &rarr;
+              </a>
+            </div>
+
+          </div>
+
+          {/* Right Column: Numbered Modern Interactive Cards (7 Cols) */}
+          <div className="lg:col-span-7 flex flex-col gap-4">
+            
+            {faqs.map((faq) => {
+              const isOpen = openId === faq.id;
+              return (
+                <div
+                  key={faq.id}
+                  className={`rounded-3xl border-2 transition-all duration-300 overflow-hidden ${
+                    isOpen
+                      ? 'bg-white border-navy-950 shadow-xl'
+                      : 'bg-white border-slate-200/90 hover:border-slate-300 shadow-sm'
+                  }`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggle(faq.id)}
+                    className="w-full text-left p-6 sm:p-7 flex items-start justify-between gap-4 cursor-pointer"
+                    aria-expanded={isOpen}
+                  >
+                    <div className="flex items-start gap-4">
+                      {/* Number Indicator Pill */}
+                      <span className={`font-heading font-black text-lg px-2.5 py-1 rounded-xl transition-colors ${
+                        isOpen
+                          ? 'bg-navy-950 text-gold-400'
+                          : 'bg-slate-100 text-slate-500'
+                      }`}>
+                        {faq.num}
+                      </span>
+
+                      <div>
+                        <span className="text-[11px] font-heading font-bold uppercase tracking-wider text-slate-600 block mb-1">
+                          {faq.category}
+                        </span>
+                        <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-navy-950 uppercase tracking-tight leading-tight">
+                          {faq.question}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Chevron Circle */}
+                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
+                      isOpen
+                        ? 'rotate-180 bg-gold-500 text-navy-950 shadow-sm'
+                        : 'bg-slate-100 text-slate-600'
+                    }`}>
+                      <ChevronDown className="w-5 h-5" />
+                    </div>
+                  </button>
+
+                  {/* Accordion Expandable Answer */}
+                  {isOpen && (
+                    <div className="px-6 sm:px-7 pb-7 pt-2 border-t border-slate-100 animate-in fade-in duration-200">
+                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed pl-12 font-normal">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+          </div>
+
         </div>
 
       </div>
     </section>
   );
 }
-
