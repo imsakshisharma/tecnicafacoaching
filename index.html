@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecnica FA Coaching Ltd | Youth Football Coaching, Academy Hubs &amp; Futsal</title>
+  <meta name="description" content="Specialized youth football coaching in South London and Kent. Midweek technical academy hubs, school partnerships, futsal masterclasses, 1-to-1 coaching, and pro academy showcases.">
+  <link rel="icon" type="image/svg+xml" href="public/assets/logo-blue.svg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              50: '#f0f5fc',
+              100: '#e1ecf9',
+              200: '#c2daf3',
+              800: '#0e3465',
+              900: '#002043',
+              950: '#00132b',
+            },
+            gold: {
+              400: '#ffd838',
+              500: '#ffca05',
+              600: '#d9a700',
+            }
+          },
+          fontFamily: {
+            heading: ['Rajdhani', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Rajdhani', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-[#ffca05] selection:text-[#00132b]">
+
+  <!-- 1. Top Bar -->
+  <div class="bg-[#00132b] text-slate-300 text-xs py-2 px-4 border-b border-navy-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+        <a href="tel:07456528812" class="inline-flex items-center gap-1.5 hover:text-[#ffca05] transition-colors">
+          <span>📞</span> <span>07456 528 812 (Direct)</span>
+        </a>
+        <a href="tel:07590046769" class="hidden sm:inline-flex items-center gap-1.5 hover:text-[#ffca05] transition-colors">
+          <span>📞</span> <span>07590 046 769</span>
+        </a>
+        <a href="mailto:warren@tecnicafa.com" class="inline-flex items-center gap-1.5 hover:text-[#ffca05] transition-colors">
+          <span>✉️</span> <span>warren@tecnicafa.com</span>
+        </a>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="bg-[#002043] text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-full text-[11px] font-medium">
+          🛡️ UEFA Licensed &bull; Enhanced DBS Verified
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Sticky White Header with Blue Logo -->
+  <header class="sticky top-0 z-50 bg-white border-b border-slate-200/90 shadow-sm py-3 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3.5">
+        <img src="public/assets/logo-blue.svg" alt="Tecnica FA Logo" class="w-12 h-12 object-contain">
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-heading font-extrabold text-2xl tracking-tight text-[#00132b] leading-none">
+              TECNICA <span class="text-[#002043]">FA</span>
+            </span>
+            <span class="bg-[#ffca05] text-[#00132b] text-[10px] font-heading font-black px-1.5 py-0.5 rounded uppercase leading-none">
+              Coaching
+            </span>
+          </div>
+          <span class="text-[11px] font-bold tracking-wider uppercase text-slate-500 mt-0.5">
+            Elite Football &amp; Futsal
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1.5">
+        <a href="#home" class="font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full text-slate-900 hover:text-blue-900 hover:bg-slate-100 transition-all">Home</a>
+        <a href="#programs" class="font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full text-slate-900 hover:text-blue-900 hover:bg-slate-100 transition-all">Programs</a>
+        <a href="#philosophy" class="font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full text-slate-900 hover:text-blue-900 hover:bg-slate-100 transition-all">Philosophy</a>
+        <a href="#schools" class="font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full text-slate-900 hover:text-blue-900 hover:bg-slate-100 transition-all">Schools</a>
+        <a href="#showcases" class="font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full text-slate-900 hover:text-blue-900 hover:bg-slate-100 transition-all">Showcases</a>
+        <a href="#about" class="font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full text-slate-900 hover:text-blue-900 hover:bg-slate-100 transition-all">About</a>
+        <a href="#gallery" class="font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full text-slate-900 hover:text-blue-900 hover:bg-slate-100 transition-all">Gallery</a>
+        <a href="#faq" class="font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full text-slate-900 hover:text-blue-900 hover:bg-slate-100 transition-all">FAQ</a>
+        <a href="#contact" class="font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full text-slate-900 hover:text-blue-900 hover:bg-slate-100 transition-all">Contact</a>
+      </nav>
+
+      <a href="#contact" class="inline-flex items-center gap-2 bg-[#00132b] hover:bg-[#ffca05] hover:text-[#00132b] text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-2.5 rounded-full shadow-sm transition-all">
+        <span>Book Assessment</span> &rarr;
+      </a>
+    </div>
+  </header>
+
+  <!-- 3. Modern Pro Football Hero Banner (Full BG + Structured Right Card - ZERO Overlapping Badges) -->
+  <section id="home" class="relative min-h-[680px] lg:min-h-[760px] flex items-center overflow-hidden border-b border-slate-200 bg-slate-900">
+    <div class="absolute inset-0 z-0">
+      <img src="public/assets/images/hero_banner.jpg" alt="Floodlit pitch backdrop" class="w-full h-full object-cover object-center scale-105">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-50 via-white/95 to-slate-900/60 lg:via-white/90 lg:to-slate-950/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-24 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left: Text & Action -->
+        <div class="lg:col-span-7 flex flex-col items-start">
+          <div class="inline-flex items-center gap-2 bg-[#00132b] text-white border border-blue-900 shadow-md px-4 py-1.5 rounded-full text-xs sm:text-sm font-heading font-bold uppercase tracking-wider mb-6">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ffca05]"></span>
+            <span>Youth Technical Development &bull; Ages 4&ndash;16</span>
+          </div>
+
+          <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-[#00132b] uppercase tracking-tight leading-[1.02] mb-6">
+            Master The Ball. <br>
+            <span class="text-[#002043]">Dominate The Game.</span>
+          </h1>
+
+          <div class="flex items-center gap-2 mb-6">
+            <span class="h-0.5 w-8 bg-[#ffca05] inline-block"></span>
+            <p class="font-heading font-bold text-lg sm:text-xl text-[#002043] uppercase tracking-wide">
+              Specialized Dutch Coerver Coaching &bull; South London &amp; Kent
+            </p>
+          </div>
+
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-8 max-w-2xl font-medium">
+            Accelerate your child&apos;s 1v1 confidence, speed of footwork, and tactical intelligence through our weekly midweek 3G academy hubs, Brazilian indoor futsal clinics, and pro club showcases vs Fulham FC &amp; Crystal Palace.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
+            <a href="#contact" class="inline-flex items-center justify-center gap-2.5 bg-[#ffca05] hover:bg-yellow-400 text-[#00132b] font-heading font-extrabold text-base uppercase tracking-wider px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all">
+              <span>Book Free Assessment Trial</span> &rarr;
+            </a>
+            <a href="#programs" class="inline-flex items-center justify-center gap-2 bg-white/95 hover:bg-white text-[#00132b] border-2 border-[#00132b]/40 font-heading font-bold text-base uppercase tracking-wider px-7 py-3.5 rounded-full shadow-sm hover:shadow-md transition-all">
+              <span>View 6 Programs</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6 border-t border-slate-300 w-full text-xs sm:text-sm text-slate-800 font-semibold">
+            <div class="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl border border-slate-200"><span>✅</span> <span>Dutch Coerver Method</span></div>
+            <div class="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl border border-slate-200"><span>✅</span> <span>UEFA B Leadership</span></div>
+            <div class="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl border border-slate-200"><span>✅</span> <span>Pro Club Showcases</span></div>
+            <div class="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl border border-slate-200"><span>✅</span> <span>Indoor Brazilian Futsal</span></div>
+            <div class="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl border border-slate-200"><span>✅</span> <span>Schools Curriculum PPA</span></div>
+            <div class="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl border border-slate-200"><span>✅</span> <span>Bromley &amp; Beckenham</span></div>
+          </div>
+        </div>
+
+        <!-- Right: Modern Pro Showcase Card (Clean, Zero Overlapping Clutter) -->
+        <div class="lg:col-span-5">
+          <div class="flex flex-col gap-4">
+            
+            <div class="bg-white rounded-3xl p-3 shadow-2xl border-2 border-slate-200 overflow-hidden">
+              <div class="relative rounded-2xl overflow-hidden aspect-[16/11] bg-slate-900">
+                <img src="public/assets/images/fulham_match_1.jpg" alt="Youth match action vs Fulham" class="w-full h-full object-cover">
+                <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+                  <span class="bg-[#ffca05] text-[#00132b] font-heading font-extrabold text-[11px] uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                    Pro Club Showcase
+                  </span>
+                  <span class="bg-[#00132b]/80 text-white text-[10px] font-medium px-2.5 py-1 rounded-full border border-white/20">
+                    Motspur Park
+                  </span>
+                </div>
+              </div>
+
+              <!-- Info bar BELOW the photo (Zero text covered) -->
+              <div class="p-4 pt-3 bg-white">
+                <h3 class="font-heading font-extrabold text-lg sm:text-xl text-[#00132b] uppercase tracking-tight">
+                  Tecnica FA Squad vs Fulham FC Academy
+                </h3>
+                <p class="text-xs text-slate-500 font-medium mt-1">
+                  📍 Motspur Park &bull; Competitive Cat 1 Fixture Experience
+                </p>
+              </div>
+            </div>
+
+            <!-- Twin Feature Badges (Neatly Below, Zero Overlap) -->
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl p-4 shadow-md flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-[#00132b] text-[#ffca05] flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  ⚡
+                </div>
+                <div>
+                  <div class="font-heading font-extrabold text-[#00132b] text-base uppercase leading-none">
+                    1,000+ Touches
+                  </div>
+                  <div class="text-[11px] text-slate-500 font-medium mt-1">
+                    Per Coerver technical clinic
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl p-4 shadow-md flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg flex-shrink-0">
+                  🏆
+                </div>
+                <div>
+                  <div class="font-heading font-extrabold text-[#00132b] text-base uppercase leading-none">
+                    Cat 1 Pathways
+                  </div>
+                  <div class="text-[11px] text-slate-500 font-medium mt-1">
+                    Fulham, Palace &amp; Charlton
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. The 6 Core Boxes -->
+  <section id="programs" class="py-20 lg:py-28 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 bg-[#f0f5fc] text-[#002043] border border-blue-200 px-3.5 py-1 rounded-full text-xs font-heading font-bold uppercase tracking-wider mb-4">
+          <span class="text-[#ffca05] font-black">/</span>
+          <span>Comprehensive Coaching Syllabus</span>
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#00132b] uppercase tracking-tight mb-4">
+          The 6 Core Coaching Pathways
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+          From midweek technical development hubs and school curriculum P.E. to high-intensity Brazilian futsal and pro academy showcases.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 1. Academy Sessions -->
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-md hover:shadow-2xl hover:border-[#00132b] transition-all duration-300 flex flex-col overflow-hidden">
+          <div class="relative h-60 w-full overflow-hidden">
+            <img src="public/assets/images/fulham_match_2.jpg" alt="Academy Sessions" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#00132b]/80 via-transparent to-transparent"></div>
+            <span class="absolute top-3.5 right-3.5 text-[11px] font-heading font-bold uppercase px-3.5 py-1 rounded-full bg-[#00132b] text-[#ffca05]">Core Program</span>
+            <div class="absolute bottom-3 left-4 text-white">
+              <span class="text-xs font-heading font-bold text-[#ffca05] uppercase">Ages 7 – 15 Years</span>
+              <h3 class="font-heading font-extrabold text-2xl text-white">Academy Sessions</h3>
+            </div>
+          </div>
+          <div class="p-7 flex flex-col flex-grow">
+            <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">Weekly intensive technical hubs focusing on Dutch Coerver ball mastery, rapid 1v1 attacking feints, and positional intelligence on floodlit 3G surfaces.</p>
+            <ul class="space-y-2 mb-6 text-xs sm:text-sm text-slate-700 font-medium">
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Over 1,000 deliberate touches per session</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Advanced 1v1 offensive &amp; defensive duels</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Fast transition play &amp; small-sided overloads</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 mb-6 bg-slate-50 -mx-7 -mb-7 p-4">
+              <p><strong>Schedule:</strong> Midweek Evenings (Floodlit 3G)</p>
+              <p><strong>Venues:</strong> West Wickham, Bromley &amp; Beckenham</p>
+            </div>
+            <div class="mt-8">
+              <a href="#contact" class="w-full inline-flex items-center justify-center gap-2 bg-[#00132b] hover:bg-[#ffca05] hover:text-[#00132b] text-white font-heading font-bold text-sm uppercase py-3.5 rounded-xl transition-all">
+                <span>Book Academy Trial</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Schools Coaching -->
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-md hover:shadow-2xl hover:border-[#00132b] transition-all duration-300 flex flex-col overflow-hidden">
+          <div class="relative h-60 w-full overflow-hidden">
+            <img src="public/assets/wp/Fulham-Acad-7-1024x768.jpg" alt="Schools Coaching" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#00132b]/80 via-transparent to-transparent"></div>
+            <span class="absolute top-3.5 right-3.5 text-[11px] font-heading font-bold uppercase px-3.5 py-1 rounded-full bg-emerald-700 text-white">Curriculum P.E. &amp; PPA</span>
+            <div class="absolute bottom-3 left-4 text-white">
+              <span class="text-xs font-heading font-bold text-[#ffca05] uppercase">Primary &amp; Secondary</span>
+              <h3 class="font-heading font-extrabold text-2xl text-white">Schools Coaching</h3>
+            </div>
+          </div>
+          <div class="p-7 flex flex-col flex-grow">
+            <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">High-quality National Curriculum P.E. lessons, reliable teacher PPA release cover, morning breakfast clubs, and high-energy after-school football programs.</p>
+            <ul class="space-y-2 mb-6 text-xs sm:text-sm text-slate-700 font-medium">
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Termly curriculum schemes of work</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Zero administrative burden for school staff</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Pupil progress assessments &amp; certificates</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 mb-6 bg-slate-50 -mx-7 -mb-7 p-4">
+              <p><strong>Schedule:</strong> School Term Times (Mon – Fri)</p>
+              <p><strong>Venues:</strong> Schools across South London &amp; Kent</p>
+            </div>
+            <div class="mt-8">
+              <a href="#contact" class="w-full inline-flex items-center justify-center gap-2 bg-[#00132b] hover:bg-[#ffca05] hover:text-[#00132b] text-white font-heading font-bold text-sm uppercase py-3.5 rounded-xl transition-all">
+                <span>Request School Proposal</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Showcase Games -->
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-md hover:shadow-2xl hover:border-[#00132b] transition-all duration-300 flex flex-col overflow-hidden">
+          <div class="relative h-60 w-full overflow-hidden">
+            <img src="public/assets/images/fulham_match_1.jpg" alt="Showcase Games" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#00132b]/80 via-transparent to-transparent"></div>
+            <span class="absolute top-3.5 right-3.5 text-[11px] font-heading font-bold uppercase px-3.5 py-1 rounded-full bg-[#ffca05] text-[#00132b] font-black">Elite Matchplay</span>
+            <div class="absolute bottom-3 left-4 text-white">
+              <span class="text-xs font-heading font-bold text-[#ffca05] uppercase">Ages 8 – 16 Years</span>
+              <h3 class="font-heading font-extrabold text-2xl text-white">Showcase Games</h3>
+            </div>
+          </div>
+          <div class="p-7 flex flex-col flex-grow">
+            <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">Competitive showcase fixtures against Premier League and EFL Category 1 &amp; 2 professional club academies, giving talented players authentic high-level test environments.</p>
+            <ul class="space-y-2 mb-6 text-xs sm:text-sm text-slate-700 font-medium">
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Fixtures against Fulham FC Academy &amp; Palace</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Professional scouts in regular attendance</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Tactical video review &amp; guidance</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 mb-6 bg-slate-50 -mx-7 -mb-7 p-4">
+              <p><strong>Schedule:</strong> Midweek &amp; Holiday Fixtures</p>
+              <p><strong>Venues:</strong> Motspur Park &amp; Pro Training Grounds</p>
+            </div>
+            <div class="mt-8">
+              <a href="#contact" class="w-full inline-flex items-center justify-center gap-2 bg-[#00132b] hover:bg-[#ffca05] hover:text-[#00132b] text-white font-heading font-bold text-sm uppercase py-3.5 rounded-xl transition-all">
+                <span>Enquire About Showcases</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Tournaments -->
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-md hover:shadow-2xl hover:border-[#00132b] transition-all duration-300 flex flex-col overflow-hidden">
+          <div class="relative h-60 w-full overflow-hidden">
+            <img src="public/assets/images/holiday_camp.jpg" alt="Tournaments" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#00132b]/80 via-transparent to-transparent"></div>
+            <span class="absolute top-3.5 right-3.5 text-[11px] font-heading font-bold uppercase px-3.5 py-1 rounded-full bg-[#002043] text-white">Competitive Festivals</span>
+            <div class="absolute bottom-3 left-4 text-white">
+              <span class="text-xs font-heading font-bold text-[#ffca05] uppercase">Youth Squads (U7 – U15)</span>
+              <h3 class="font-heading font-extrabold text-2xl text-white">Tournaments</h3>
+            </div>
+          </div>
+          <div class="p-7 flex flex-col flex-grow">
+            <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">Structured youth football festivals, summer cup competitions, and half-term mini-tournaments designed to test tactical camaraderie, match resilience, and composure.</p>
+            <ul class="space-y-2 mb-6 text-xs sm:text-sm text-slate-700 font-medium">
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Group stages and knockout matches</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> FA qualified referees &amp; certified coaches</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Medals, trophies, and player awards</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 mb-6 bg-slate-50 -mx-7 -mb-7 p-4">
+              <p><strong>Schedule:</strong> School Half-Terms &amp; Summer Breaks</p>
+              <p><strong>Venues:</strong> Pickhurst Rise &amp; Regional Sports Arenas</p>
+            </div>
+            <div class="mt-8">
+              <a href="#contact" class="w-full inline-flex items-center justify-center gap-2 bg-[#00132b] hover:bg-[#ffca05] hover:text-[#00132b] text-white font-heading font-bold text-sm uppercase py-3.5 rounded-xl transition-all">
+                <span>View Tournament Dates</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. 1-2-1 Coaching -->
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-md hover:shadow-2xl hover:border-[#00132b] transition-all duration-300 flex flex-col overflow-hidden">
+          <div class="relative h-60 w-full overflow-hidden">
+            <img src="public/assets/images/fulham_acad_6.jpg" alt="1-2-1 Coaching" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#00132b]/80 via-transparent to-transparent"></div>
+            <span class="absolute top-3.5 right-3.5 text-[11px] font-heading font-bold uppercase px-3.5 py-1 rounded-full bg-slate-900 text-[#ffca05]">Private Masterclass</span>
+            <div class="absolute bottom-3 left-4 text-white">
+              <span class="text-xs font-heading font-bold text-[#ffca05] uppercase">All Ages (6 – 18 Years)</span>
+              <h3 class="font-heading font-extrabold text-2xl text-white">1-2-1 Coaching</h3>
+            </div>
+          </div>
+          <div class="p-7 flex flex-col flex-grow">
+            <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">Bespoke 60-minute private technical clinics tailored directly to a player’s positional role, weak-foot striking precision, speed of footwork, and tactical confidence.</p>
+            <ul class="space-y-2 mb-6 text-xs sm:text-sm text-slate-700 font-medium">
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Direct coaching with UEFA B Licensed Directors</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> High-repetition mechanical correction</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Targeted weak-foot and shooting mechanics</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 mb-6 bg-slate-50 -mx-7 -mb-7 p-4">
+              <p><strong>Schedule:</strong> Flexible Evening &amp; Weekend Slots</p>
+              <p><strong>Venues:</strong> Selected Hub Venues (London &amp; Kent)</p>
+            </div>
+            <div class="mt-8">
+              <a href="#contact" class="w-full inline-flex items-center justify-center gap-2 bg-[#00132b] hover:bg-[#ffca05] hover:text-[#00132b] text-white font-heading font-bold text-sm uppercase py-3.5 rounded-xl transition-all">
+                <span>Book 1-2-1 Session</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Futsal -->
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-md hover:shadow-2xl hover:border-[#00132b] transition-all duration-300 flex flex-col overflow-hidden">
+          <div class="relative h-60 w-full overflow-hidden">
+            <img src="public/assets/images/futsal_session.jpg" alt="Futsal Clinics" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#00132b]/80 via-transparent to-transparent"></div>
+            <span class="absolute top-3.5 right-3.5 text-[11px] font-heading font-bold uppercase px-3.5 py-1 rounded-full bg-cyan-700 text-white">Indoor Mastery</span>
+            <div class="absolute bottom-3 left-4 text-white">
+              <span class="text-xs font-heading font-bold text-[#ffca05] uppercase">Ages 6 – 14 Years</span>
+              <h3 class="font-heading font-extrabold text-2xl text-white">Futsal Clinics</h3>
+            </div>
+          </div>
+          <div class="p-7 flex flex-col flex-grow">
+            <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">Indoor Brazilian futsal utilizing weighted low-bounce balls to demand instant decision-making, rapid sole-of-foot control, and spatial awareness in tight environments.</p>
+            <ul class="space-y-2 mb-6 text-xs sm:text-sm text-slate-700 font-medium">
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Low-bounce ball demands tight close control</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Generates 6x more touches per minute</li>
+              <li><span class="text-[#ffca05] font-bold mr-2">✓</span> Fast transitions, wall passes, and tight turns</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 mb-6 bg-slate-50 -mx-7 -mb-7 p-4">
+              <p><strong>Schedule:</strong> Weekend &amp; Midweek Indoor Slots</p>
+              <p><strong>Venues:</strong> West Wickham &amp; Beckenham Sports Halls</p>
+            </div>
+            <div class="mt-8">
+              <a href="#contact" class="w-full inline-flex items-center justify-center gap-2 bg-[#00132b] hover:bg-[#ffca05] hover:text-[#00132b] text-white font-heading font-bold text-sm uppercase py-3.5 rounded-xl transition-all">
+                <span>Register for Futsal</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Schools Section (Exact layout from user screenshot) -->
+  <section id="schools" class="py-20 lg:py-28 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 bg-blue-100 text-[#002043] border border-blue-200 px-3.5 py-1 rounded-full text-xs font-heading font-bold uppercase tracking-wider mb-4">
+          <span class="text-[#ffca05] font-black">/</span>
+          <span>Educational Partnerships</span>
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#00132b] uppercase tracking-tight mb-4">
+          Schools Coaching &amp; P.E. Delivery
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+          Tecnica FA Coaching Ltd partners with Primary and Secondary schools across West Wickham, Bromley, and Beckenham to deliver inspiring P.E. lessons, reliable PPA cover, and active school clubs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        
+        <!-- School Card 1 -->
+        <div class="bg-white rounded-3xl p-8 border-2 border-slate-200 shadow-md hover:shadow-xl hover:border-[#00132b] transition-all duration-300 flex flex-col">
+          <div class="w-16 h-16 rounded-2xl bg-[#00132b] text-[#ffca05] border border-blue-900 flex items-center justify-center mb-6 text-2xl shadow-sm">
+            📖
+          </div>
+          <h3 class="font-heading font-extrabold text-2xl text-[#00132b] uppercase tracking-tight mb-3">
+            Curriculum P.E. &amp; PPA Cover
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
+            High-quality Physical Education lessons aligned with National Curriculum standards, planned and taught by fully qualified, DBS-checked UEFA/FA coaches.
+          </p>
+          <ul class="space-y-3 pt-5 border-t border-slate-100 text-xs sm:text-sm text-slate-800">
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">Full termly lesson schemes of work</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">Inclusive learning for all ability levels</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">Reliable weekly teacher PPA cover</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">Pupil assessment &amp; progress reports</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- School Card 2 -->
+        <div class="bg-white rounded-3xl p-8 border-2 border-slate-200 shadow-md hover:shadow-xl hover:border-[#00132b] transition-all duration-300 flex flex-col">
+          <div class="w-16 h-16 rounded-2xl bg-[#00132b] text-[#ffca05] border border-blue-900 flex items-center justify-center mb-6 text-2xl shadow-sm">
+            ⏰
+          </div>
+          <h3 class="font-heading font-extrabold text-2xl text-[#00132b] uppercase tracking-tight mb-3">
+            Breakfast &amp; After-School Clubs
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
+            Energizing morning sessions and engaging after-school football clubs that boost school attendance, fitness, and team camaraderie.
+          </p>
+          <ul class="space-y-3 pt-5 border-t border-slate-100 text-xs sm:text-sm text-slate-800">
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">Hassle-free online parent booking</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">Healthy breakfast &amp; active warm-ups</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">End-of-term medals &amp; certificates</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">Zero administrative burden for staff</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- School Card 3 -->
+        <div class="bg-white rounded-3xl p-8 border-2 border-slate-200 shadow-md hover:shadow-xl hover:border-[#00132b] transition-all duration-300 flex flex-col">
+          <div class="w-16 h-16 rounded-2xl bg-[#00132b] text-[#ffca05] border border-blue-900 flex items-center justify-center mb-6 text-2xl shadow-sm">
+            ⭐
+          </div>
+          <h3 class="font-heading font-extrabold text-2xl text-[#00132b] uppercase tracking-tight mb-3">
+            School Teams &amp; Tournaments
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
+            Tactical preparation for inter-school cups, friendly fixtures, and borough tournaments, instilling tactical teamwork and sportsmanship.
+          </p>
+          <ul class="space-y-3 pt-5 border-t border-slate-100 text-xs sm:text-sm text-slate-800">
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">School team squad coaching</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">Match day management &amp; refereeing</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">Hosting local school mini-festivals</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#ffca05] font-bold text-base leading-none">✓</span>
+              <span class="font-medium text-slate-700">Teacher CPD &amp; coaching workshops</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. About Section (Clean card structure, zero overlapping badges) -->
+  <section id="about" class="py-20 lg:py-28 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 flex flex-col gap-4">
+          <div class="bg-white rounded-3xl p-3 shadow-xl border-2 border-slate-200 overflow-hidden">
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-900">
+              <img src="public/assets/images/fulham_acad_6.jpg" alt="Youth Technical Drill" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3">
+                <span class="bg-[#ffca05] text-[#00132b] font-heading font-extrabold text-[11px] uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                  Youth Technical Drill
+                </span>
+              </div>
+            </div>
+            <div class="p-4 pt-3">
+              <h4 class="font-heading font-extrabold text-lg text-[#00132b] uppercase tracking-tight">
+                High-Repetition Ball Manipulation
+              </h4>
+              <p class="text-xs text-slate-500 font-medium mt-0.5">
+                Every player with a ball &bull; Licensed UEFA coaching supervision
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-[#00132b] text-white rounded-2xl p-5 shadow-lg border border-navy-800 flex items-start gap-3.5">
+            <div class="p-2.5 rounded-xl bg-[#002043] text-[#ffca05] border border-blue-900 flex-shrink-0 text-lg">
+              🎖️
+            </div>
+            <div>
+              <h4 class="font-heading font-extrabold text-base text-[#ffca05] uppercase tracking-wide mb-1">
+                UEFA B Coaching Leadership
+              </h4>
+              <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                Coaching director Austin Berkley brings former professional football experience with Gillingham FC, Swindon Town &amp; Shrewsbury to elevate grassroots technical education.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col items-start lg:pl-6">
+          <div class="inline-flex items-center gap-2 bg-[#f0f5fc] text-[#002043] border border-blue-200 px-3.5 py-1 rounded-full text-xs font-heading font-bold uppercase tracking-wider mb-4">
+            <span class="text-[#ffca05] font-black">/</span>
+            <span>Our Coaching Leadership</span>
+          </div>
+
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#00132b] uppercase tracking-tight mb-6">
+            Elite Coaching Ethos &amp; Proven Player Development
+          </h2>
+
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6 font-normal">
+            Founded by former professional footballer <strong>Austin Berkley (UEFA B Licensed Director)</strong> and <strong>Warren Berkley (Head of Operations)</strong>, Tecnica FA Coaching Ltd provides dedicated, high-level technical football development for children and youth players across South London and Kent.
+          </p>
+
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-8 font-normal">
+            Unlike traditional grassroots clubs where match results often dictate session design, our specialized coaching setup is 100% focused on the technical growth, confidence, and creative expression of the individual young player.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mb-8">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-3">
+              <span class="text-emerald-600 text-lg">🛡️</span>
+              <div>
+                <h4 class="font-heading font-bold text-[#00132b] text-sm uppercase">UEFA B Licensed Direction</h4>
+                <p class="text-xs text-slate-500 mt-0.5">Highest tier tactical and technical syllabus delivery.</p>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-3">
+              <span class="text-emerald-600 text-lg">🎓</span>
+              <div>
+                <h4 class="font-heading font-bold text-[#00132b] text-sm uppercase">Enhanced DBS &amp; Safeguarding</h4>
+                <p class="text-xs text-slate-500 mt-0.5">All staff fully vetted with comprehensive First Aid certification.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact" class="inline-flex items-center gap-2 bg-[#00132b] hover:bg-[#ffca05] hover:text-[#00132b] text-white font-heading font-bold text-sm uppercase tracking-wider px-7 py-4 rounded-full shadow-md transition-all">
+            <span>Speak with Our Coaching Directors</span> &rarr;
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Footer -->
+  <footer class="bg-[#00132b] text-slate-400 py-12 px-4 sm:px-6 border-t border-navy-900">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="public/assets/logo-blue.svg" alt="Tecnica Logo" class="w-10 h-10 object-contain">
+        <div>
+          <span class="font-heading font-bold text-white text-lg">TECNICA FA COACHING LTD</span>
+          <p class="text-xs text-slate-400">UEFA B Licensed Director Austin Berkley &bull; South London Hubs</p>
+        </div>
+      </div>
+      <div class="text-xs text-slate-400 text-center sm:text-right">
+        <p>&copy; 2026 Tecnica FA Coaching Ltd &bull; Registered in England &amp; Wales</p>
+        <p class="mt-1">West Wickham &bull; Bromley &bull; Beckenham &bull; Shirley</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
