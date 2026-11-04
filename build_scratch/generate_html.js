@@ -1,0 +1,1345 @@
+const fs = require('fs');
+
+const htmlContent = `<!DOCTYPE html>
+<html lang="en-GB" data-concept="concept2">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- =====================================================================
+       SEO PRESERVATION (From www.tecnicafa.com / Yoast Local SEO)
+       ===================================================================== -->
+  <title>Tecnica FA Coaching Ltd | Elite Football Coaching, Academy Sessions & Futsal | South London</title>
+  <meta name="description" content="Tecnica FA Coaching Ltd provides Academy level football coaching, Dutch Coerver technique masterclasses, Futsal, and school partnerships across West Wickham, Beckenham, Bromley, Shirley, and Norwood. Directed by Austin Berkley, UEFA B & ex Crystal Palace Youths Manager.">
+  <meta name="keywords" content="football coaching West Wickham, football training Beckenham, football academy Bromley, Coerver technique coaching, Austin Berkley football, futsal coaching south london, youth football training Shirley, holiday football camp Beckenham, schools football coaching Bromley">
+  <link rel="canonical" href="https://www.tecnicafa.com/coaching/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  <!-- Geo-Targeting & Local SEO -->
+  <meta name="geo.placename" content="West Wickham, Kent">
+  <meta name="geo.position" content="51.3799647;-0.0020474">
+  <meta name="geo.region" content="GB-KEN">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tecnica FA Coaching Ltd - Premier Football Coaching & Academy Sessions">
+  <meta property="og:description" content="Academy level football training utilizing the Dutch Coerver technique adopted by Barcelona, Ajax and Bayern Munich. UEFA B Director Austin Berkley.">
+  <meta property="og:url" content="https://www.tecnicafa.com/coaching/">
+  <meta property="og:site_name" content="Tecnica FA Coaching Ltd">
+  <meta property="og:image" content="assets/images/fulham_match_1.jpg">
+  <meta property="place:location:latitude" content="51.3799647">
+  <meta property="place:location:longitude" content="-0.0020474">
+  <meta property="business:contact_data:street_address" content="228 - 230 Pickhurst Rise">
+  <meta property="business:contact_data:locality" content="West Wickham">
+  <meta property="business:contact_data:postal_code" content="BR4 0AU">
+  <meta property="business:contact_data:country_name" content="United Kingdom">
+  <meta property="business:contact_data:email" content="warren@tecnicafa.com">
+  <meta property="business:contact_data:phone_number" content="07456528812">
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tecnica FA Coaching Ltd - Elite Football Coaching & Futsal">
+  <meta name="twitter:description" content="Dutch Coerver technique combined with the English FA pathway. South London premier training hubs in West Wickham, Bromley & Beckenham.">
+  <meta name="twitter:image" content="assets/images/fulham_match_1.jpg">
+  <meta name="twitter:site" content="@TecnicaFa">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo_transparent.png">
+
+  <!-- Google Fonts: Rajdhani for athletic headers, Plus Jakarta Sans for ultra-clean body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsClub",
+    "@id": "https://www.tecnicafa.com/#coaching",
+    "name": "Tecnica FA Coaching Ltd",
+    "alternateName": "Tecnica Football Coaching",
+    "url": "https://www.tecnicafa.com/coaching/",
+    "logo": "https://www.tecnicafa.com/wp-content/uploads/2021/07/Tecnica_2021_80px.svg",
+    "image": "assets/images/hero_banner.jpg",
+    "description": "Tecnica FA Coaching Ltd provides professional Academy level football training, Dutch Coerver ball mastery clinics, Futsal, and Primary & Secondary School coaching throughout South London.",
+    "telephone": "+447456528812",
+    "email": "warren@tecnicafa.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "228 - 230 Pickhurst Rise",
+      "addressLocality": "West Wickham",
+      "addressRegion": "Kent",
+      "postalCode": "BR4 0AU",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.3799647,
+      "longitude": -0.0020474
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Austin Berkley",
+      "jobTitle": "Director of Coaching & UEFA B Licensee (Ex-Crystal Palace Youths Manager)"
+    },
+    "sameAs": [
+      "https://www.facebook.com/tecnicafa/",
+      "https://www.instagram.com/tecnicafa/",
+      "https://twitter.com/TecnicaFa",
+      "https://www.youtube.com/channel/UC-KUpTq9bZEUSSTjwtbkiOg"
+    ]
+  }
+  </script>
+</head>
+<body class="tecnica-dark-theme">
+
+  <!-- =====================================================================
+       TOP ENTITY ANNOUNCEMENT & CONTACT BAR
+       ===================================================================== -->
+  <div class="entity-badge-bar">
+    <span class="entity-badge-tag">Company Portal</span>
+    <span><strong>Tecnica FA Coaching Ltd</strong> &bull; Elite Coaching, Futsal &amp; Schools Specialist</span>
+    <span style="opacity: 0.5;">|</span>
+    <span>For Competitive League Teams: <a href="https://www.tecnicafa.com/" class="entity-switch-link" title="Visit Tecnica Football Academy CIC Main Website">Visit Tecnica FA CIC (Main Club) &rarr;</a></span>
+  </div>
+
+  <div class="top-bar-wrapper">
+    <div class="container top-bar-flex">
+      <div class="top-bar-contact-info">
+        <a href="tel:07456528812" class="top-contact-link" title="Call Warren Berkley">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>07456 528 812 (Direct)</span>
+        </a>
+        <a href="tel:07590046769" class="top-contact-link" title="Call Academy Line">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>07590 046 769</span>
+        </a>
+        <a href="mailto:warren@tecnicafa.com" class="top-contact-link" title="Email Tecnica Coaching">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>warren@tecnicafa.com</span>
+        </a>
+      </div>
+
+      <div class="top-bar-meta-controls">
+        <div class="fa-charter-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>FA Charter Standard Accredited</span>
+        </div>
+        <div class="top-social-icons">
+          <a href="https://www.instagram.com/tecnicafa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/tecnicafa/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       HEADER & NAVIGATION (Project 2 Structure)
+       ===================================================================== -->
+  <header class="site-header-nav concept-concept2">
+    <div class="container nav-header-flex">
+      <!-- Crest & Brand -->
+      <a href="#home" class="brand-logo-cluster" title="Tecnica FA Coaching Ltd">
+        <img src="assets/logo_transparent.png" alt="Tecnica FA Crest" class="brand-crest-img">
+        <div class="brand-text-column">
+          <span class="brand-title-main">TECNICA <span class="text-gold">FA</span></span>
+          <span class="brand-subtitle-line">Coaching Ltd &bull; Elite Training</span>
+        </div>
+      </a>
+
+      <!-- 8-Section Desktop Nav Bar (Project 2 Required Structure) -->
+      <nav class="desktop-menu-row" aria-label="Primary Navigation">
+        <a href="#home" class="nav-single-link is-active">Home</a>
+        <a href="#about" class="nav-single-link">About Us</a>
+        <a href="#philosophy" class="nav-single-link">Coaching Philosophy</a>
+        <a href="#sessions" class="nav-single-link">Academy Sessions</a>
+        <a href="#schools" class="nav-single-link">Schools</a>
+        <a href="#tournaments" class="nav-single-link">Tournaments / Showcases</a>
+        <a href="#gallery" class="nav-single-link">Gallery</a>
+        <a href="#contact" class="nav-single-link">Contact Us</a>
+      </nav>
+
+      <!-- Action Button & Mobile Burger -->
+      <div class="nav-right-actions">
+        <a href="#contact" class="hero-primary-pill-btn trigger-booking-modal" style="padding: 0.65rem 1.4rem; font-size: 0.88rem;">
+          <span>Book a Session</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <button type="button" class="mobile-burger-toggle" id="mobileToggleBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo-cluster">
+        <img src="assets/logo_transparent.png" alt="Tecnica FA Crest" class="brand-crest-img" style="height: 42px;">
+        <span class="brand-title-main">TECNICA <span class="text-gold">FA</span></span>
+      </div>
+      <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <a href="#home" class="mobile-nav-link">1. Home</a>
+      <a href="#about" class="mobile-nav-link">2. About Us</a>
+      <a href="#philosophy" class="mobile-nav-link">3. Coaching Philosophy</a>
+      <a href="#sessions" class="mobile-nav-link">4. Academy Sessions</a>
+      <a href="#schools" class="mobile-nav-link">5. Schools</a>
+      <a href="#tournaments" class="mobile-nav-link">6. Tournaments / Showcase Events</a>
+      <a href="#gallery" class="mobile-nav-link">7. Gallery</a>
+      <a href="#contact" class="mobile-nav-link">8. Contact Us</a>
+      <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+        <a href="#contact" class="hero-primary-pill-btn w-full text-center trigger-booking-modal" style="display: block;">Book Free Assessment Trial</a>
+        <a href="https://www.tecnicafa.com/" class="nav-single-link text-gold" style="display: block; margin-top: 1rem; text-align: center;">&larr; Switch to Tecnica FA CIC Main Club</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- =====================================================================
+         1. HERO SECTION (Focus: Football Coaching, Academy Sessions, Futsal)
+         ===================================================================== -->
+    <section class="hero-banner-section" id="home">
+      <div class="hero-image-backdrop">
+        <img src="assets/images/hero_banner.jpg" alt="Tecnica FA Coaching Session in action" class="hero-live-photo">
+        <div class="hero-soft-vignette"></div>
+      </div>
+
+      <div class="container hero-content-relative">
+        <div class="hero-text-container">
+          <div class="hero-recruitment-pill">
+            <span class="status-dot-pulse"></span>
+            <span class="recruitment-tag-copy">TECNICA FA COACHING LTD &bull; ENROLLING NOW FOR 2026/2027</span>
+          </div>
+
+          <h1 class="hero-display-heading">
+            Elite Football Coaching, <br>
+            <span class="text-gold">Academy Sessions</span> &amp; Futsal
+          </h1>
+
+          <p class="hero-narrative-copy">
+            Directed by ex-professional footballer and former <strong>Crystal Palace Youths Manager Austin Berkley (UEFA B)</strong>. We combine the world-renowned <strong>Dutch Coerver Technique</strong> with high-tempo <strong>Futsal ball mastery</strong> to develop technically superior, game-intelligent players across South London.
+          </p>
+
+          <div class="hero-buttons-row">
+            <a href="#contact" class="hero-primary-pill-btn trigger-booking-modal">
+              <span>Book an Academy Assessment</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#philosophy" class="hero-secondary-pill-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffca05" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Explore Dutch Coerver Method</span>
+            </a>
+          </div>
+
+          <!-- Verified Performance Metrics -->
+          <div class="metrics-cards-grid">
+            <div class="metric-box-card">
+              <div class="metric-number text-gold">500+</div>
+              <div class="metric-label">Players Developed</div>
+              <div class="metric-sub">Ages 4 to 16 in South London</div>
+            </div>
+            <div class="metric-box-card">
+              <div class="metric-number text-gold">15+</div>
+              <div class="metric-label">Years Academy Legacy</div>
+              <div class="metric-sub">Proven Technical Curriculum</div>
+            </div>
+            <div class="metric-box-card">
+              <div class="metric-number text-gold">100%</div>
+              <div class="metric-label">UEFA / FA Licensed</div>
+              <div class="metric-sub">Austin &amp; Warren Berkley</div>
+            </div>
+            <div class="metric-box-card">
+              <div class="metric-number text-gold">Pro Links</div>
+              <div class="metric-label">Cat 1 &amp; 2 Academy Showcases</div>
+              <div class="metric-sub">Fulham FC, Palace, Charlton</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         2. ABOUT US (Leadership, Qualifications & Legacy)
+         ===================================================================== -->
+    <section class="about-overview-section" id="about" style="padding: 6.5rem 0; background: var(--bg-primary);">
+      <div class="container">
+        <div class="coerver-legacy-banner" style="margin-top: 0; background: linear-gradient(135deg, #071530 0%, #020712 100%);">
+          <div style="flex: 1; min-width: 300px;">
+            <div class="section-eyebrow-pill">
+              <span>/</span>
+              <span>ABOUT TECNICA FA COACHING LTD</span>
+            </div>
+            <h2 class="section-title-large" style="margin-bottom: 1.25rem;">
+              Dedicated to Technical Perfection &amp; Player Flourishing
+            </h2>
+            <p class="narrative-lead-text" style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.7;">
+              Tecnica FA Coaching Ltd was founded on a singular conviction: <em>technique is in our name</em>. While standard grassroots clubs often prioritize winning matches over developing the individual player, our coaching structure prioritizes pure ball mastery, composure under pressure, and decision-making speed.
+            </p>
+            <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+              We operate specialised development centers, intensive holiday camps, school curriculum programs, and private 1-to-1 masterclasses. Our players are consistently tested against Category 1 &amp; 2 professional academies, giving aspiring talent the competitive arena needed to be scouted.
+            </p>
+            <div class="pro-club-pills-row">
+              <span class="pro-club-pill">UEFA B Licensed Director</span>
+              <span class="pro-club-pill">FA Level 3 Accredited</span>
+              <span class="pro-club-pill">FA Charter Standard Club</span>
+              <span class="pro-club-pill">Enhanced DBS &amp; Safeguarding</span>
+            </div>
+          </div>
+          
+          <div style="max-width: 360px; width: 100%; text-align: center;">
+            <div style="position: relative; border-radius: 16px; overflow: hidden; border: 2px solid rgba(255, 202, 5, 0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
+              <img src="assets/images/hero_austin.jpg" alt="Austin Berkley - Director of Coaching" style="width: 100%; height: auto; display: block;">
+              <div style="background: rgba(2, 7, 18, 0.9); padding: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <div class="badge-coach-title" style="font-size: 1.25rem; color: #fff; font-weight: 700;">Austin Berkley</div>
+                <div class="badge-coach-cred" style="color: #ffca05; font-size: 0.85rem; margin-top: 0.25rem;">
+                  Director of Coaching &bull; UEFA B / FA Level 3<br>
+                  Former Manager at Crystal Palace Youths
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. COACHING PHILOSOPHY (Coerver / Dutch Method)
+         ===================================================================== -->
+    <section class="philosophy-section" id="philosophy">
+      <div class="container">
+        <div class="text-center" style="max-width: 780px; margin: 0 auto;">
+          <div class="section-eyebrow-pill" style="margin: 0 auto 1rem;">
+            <span>/</span>
+            <span>WORLD-CLASS METHODOLOGY</span>
+          </div>
+          <h2 class="section-title-large">The Dutch Coerver Technique</h2>
+          <p class="section-subtitle-copy">
+            Adopted by global giants including <strong>Ajax Amsterdam, FC Barcelona, Benfica, and Bayern Munich</strong>, the Coerver method breaks soccer down into fundamental building blocks, teaching players to master the ball first before progressing to complex match situations.
+          </p>
+        </div>
+
+        <!-- 6 Pillars of Coerver Pyramid -->
+        <div class="philosophy-grid-6">
+          <div class="philosophy-card">
+            <div class="philosophy-step-num">01</div>
+            <h3 class="philosophy-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffca05" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              Ball Mastery
+            </h3>
+            <p class="philosophy-card-desc">
+              The cornerstone of all technical development. Using all surfaces of both feet (sole, laces, inside, outside) until manipulating the ball becomes second nature in high-pressure scenarios.
+            </p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-step-num">02</div>
+            <h3 class="philosophy-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffca05" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+              Receiving &amp; Passing
+            </h3>
+            <p class="philosophy-card-desc">
+              First touch in the direction of play. Crisp, weighted ground passing with proper body shape, enabling instant ball circulation and keeping possession under aggressive closing down.
+            </p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-step-num">03</div>
+            <h3 class="philosophy-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffca05" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              1v1 Dominance
+            </h3>
+            <p class="philosophy-card-desc">
+              Feints, step-overs, and change of pace to beat defenders in offensive 1v1s, coupled with body positioning, patience, and recovery tackling in defensive 1v1 situations.
+            </p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-step-num">04</div>
+            <h3 class="philosophy-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffca05" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Speed &amp; Agility
+            </h3>
+            <p class="philosophy-card-desc">
+              Explosive multi-directional acceleration with and without the ball. Speed of footwork, speed of reaction, and quick mental processing of transitioning spaces.
+            </p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-step-num">05</div>
+            <h3 class="philosophy-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffca05" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
+              Finishing Precision
+            </h3>
+            <p class="philosophy-card-desc">
+              Instinctive striking around the penalty box: volleys, driven low strikes, bent finishes, and composed placement under match pressure and defensive recovery.
+            </p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-step-num">06</div>
+            <h3 class="philosophy-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffca05" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Group Play &amp; Insight
+            </h3>
+            <p class="philosophy-card-desc">
+              Small-sided combinations (2v1, 3v2 overloads), wall passes, overlaps, and creating space through off-the-ball runs that mirror real academy fixture intensity.
+            </p>
+          </div>
+        </div>
+
+        <!-- European Pedigree Banner -->
+        <div class="coerver-legacy-banner">
+          <div>
+            <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.35rem; font-family: var(--font-heading);">
+              The Dutch Curriculum Adopted Worldwide
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+              Endorsed by legendary coaches and national federations. Proven to generate technical masters of the modern game.
+            </p>
+          </div>
+          <div class="club-crest-logos">
+            <span class="club-crest-badge">AFC Ajax</span>
+            <span class="club-crest-badge">FC Barcelona</span>
+            <span class="club-crest-badge">FC Bayern Munich</span>
+            <span class="club-crest-badge">SL Benfica</span>
+            <span class="club-crest-badge">The English FA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. ACADEMY SESSIONS (Focus on Coaching, Development, Futsal, Camps)
+         ===================================================================== -->
+    <section class="programs-grid-section" id="sessions">
+      <div class="container">
+        <div class="text-center" style="max-width: 780px; margin: 0 auto;">
+          <div class="section-eyebrow-pill" style="margin: 0 auto 1rem;">
+            <span>/</span>
+            <span>STRUCTURED SYLLABUS</span>
+          </div>
+          <h2 class="section-title-large">Tecnica FA Coaching Programs</h2>
+          <p class="section-subtitle-copy">
+            Explore our specialized development pathways, from foundation touch work for young kickers to high-intensity Brazilian Futsal clinics and full-day holiday soccer camps.
+          </p>
+
+          <!-- Interactive Filter Tabs -->
+          <div class="gallery-filters-row" style="margin-top: 2rem;">
+            <button type="button" class="gallery-filter-pill session-filter-pill is-active" data-category="all">All Programs</button>
+            <button type="button" class="gallery-filter-pill session-filter-pill" data-category="development">Academy Development</button>
+            <button type="button" class="gallery-filter-pill session-filter-pill" data-category="futsal">Futsal Clinics</button>
+            <button type="button" class="gallery-filter-pill session-filter-pill" data-category="foundation">Mini Tecnica (4-6)</button>
+            <button type="button" class="gallery-filter-pill session-filter-pill" data-category="camps">Holiday Camps</button>
+            <button type="button" class="gallery-filter-pill session-filter-pill" data-category="specialist">1-on-1 Precision</button>
+          </div>
+        </div>
+
+        <!-- Programs Card Grid -->
+        <div class="programs-cards-layout" style="margin-top: 3rem;">
+          
+          <!-- Program 1: Academy Development -->
+          <div class="program-display-card session-program-card" data-category="development">
+            <div class="program-card-thumb-wrap">
+              <img src="assets/images/fulham_match_1.jpg" alt="Academy Development Sessions" class="program-card-thumb">
+              <span class="program-badge-floating">Core Program</span>
+            </div>
+            <div class="program-card-content">
+              <div class="program-age-tagline">Ages 7 &ndash; 15 Years</div>
+              <h3 class="program-card-headline">Academy Development Hubs</h3>
+              <p class="program-card-summary">
+                Weekly intensive technical hubs focusing on advanced Coerver footwork, speed-of-play combinations, and positional game intelligence on floodlit 3G surfaces.
+              </p>
+              <div class="program-meta-chips-stack" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.35rem;">
+                  <strong class="text-gold">Schedule:</strong> Midweek Evenings (Floodlit 3G)
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                  <strong>Locations:</strong> Bromley, Beckenham &amp; West Wickham
+                </div>
+              </div>
+              <button type="button" class="hero-primary-pill-btn trigger-booking-modal" style="width: 100%; margin-top: 1.25rem; justify-content: center;">
+                <span>Book Free Trial</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Program 2: Futsal -->
+          <div class="program-display-card session-program-card" data-category="futsal">
+            <div class="program-card-thumb-wrap">
+              <img src="assets/images/futsal_session.jpg" alt="Futsal Technical Masterclass" class="program-card-thumb">
+              <span class="program-badge-floating" style="border-color: #06b6d4; color: #06b6d4;">Fast-Paced Mastery</span>
+            </div>
+            <div class="program-card-content">
+              <div class="program-age-tagline" style="color: #06b6d4;">Ages 6 &ndash; 14 Years</div>
+              <h3 class="program-card-headline">Futsal Technical Clinics</h3>
+              <p class="program-card-summary">
+                Heavier, low-bounce balls on indoor sports courts force players into quick thinking, rapid sole-of-the-foot manipulation, tight space turns, and instant passing combinations.
+              </p>
+              <div class="program-meta-chips-stack" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.35rem;">
+                  <strong class="text-gold">Schedule:</strong> Weekend &amp; Midweek Indoor Slots
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                  <strong>Locations:</strong> West Wickham &amp; Beckenham Indoor Sports Halls
+                </div>
+              </div>
+              <button type="button" class="hero-primary-pill-btn trigger-booking-modal" style="width: 100%; margin-top: 1.25rem; justify-content: center;">
+                <span>Book Futsal Clinic</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Program 3: Mini Tecnica -->
+          <div class="program-display-card session-program-card" data-category="foundation">
+            <div class="program-card-thumb-wrap">
+              <img src="assets/images/fulham_match_2.jpg" alt="Mini Tecnica Kickers" class="program-card-thumb">
+              <span class="program-badge-floating" style="border-color: #10b981; color: #10b981;">Foundation Phase</span>
+            </div>
+            <div class="program-card-content">
+              <div class="program-age-tagline" style="color: #10b981;">Ages 4 &ndash; 6 Years</div>
+              <h3 class="program-card-headline">Mini Tecnica Kickers</h3>
+              <p class="program-card-summary">
+                Introducing soccer with enthusiasm, balance, coordination, and fundamental ball familiarity through engaging mini-games, fun obstacle courses, and positive reinforcement.
+              </p>
+              <div class="program-meta-chips-stack" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.35rem;">
+                  <strong class="text-gold">Schedule:</strong> Saturday &amp; Sunday Mornings
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                  <strong>Locations:</strong> Blake Hall &amp; West Wickham Pitches
+                </div>
+              </div>
+              <button type="button" class="hero-primary-pill-btn trigger-booking-modal" style="width: 100%; margin-top: 1.25rem; justify-content: center;">
+                <span>Register Mini Kicker</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Program 4: Holiday Camps -->
+          <div class="program-display-card session-program-card" data-category="camps">
+            <div class="program-card-thumb-wrap">
+              <img src="assets/images/holiday_camp.jpg" alt="Holiday Day Camps" class="program-card-thumb">
+              <span class="program-badge-floating" style="border-color: #f59e0b; color: #f59e0b;">Half-Term &amp; Summer</span>
+            </div>
+            <div class="program-card-content">
+              <div class="program-age-tagline" style="color: #f59e0b;">Ages 5 &ndash; 14 Years</div>
+              <h3 class="program-card-headline">Half-Term &amp; Holiday Camps</h3>
+              <p class="program-card-summary">
+                Full-day soccer schools packed with technical skill competitions, crossbar challenges, mini World Cup tournaments, and daily awards led by licensed academy coaches.
+              </p>
+              <div class="program-meta-chips-stack" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.35rem;">
+                  <strong class="text-gold">Hours:</strong> 9:30 AM &ndash; 3:30 PM (Daily)
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                  <strong>Locations:</strong> Pickhurst Rise &amp; West Wickham
+                </div>
+              </div>
+              <button type="button" class="hero-primary-pill-btn trigger-booking-modal" style="width: 100%; margin-top: 1.25rem; justify-content: center;">
+                <span>Enquire Camp Dates</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Program 5: 1-on-1 Precision -->
+          <div class="program-display-card session-program-card" data-category="specialist">
+            <div class="program-card-thumb-wrap">
+              <img src="assets/images/fulham_acad_6.jpg" alt="1-on-1 Precision Clinics" class="program-card-thumb">
+              <span class="program-badge-floating">Private Masterclass</span>
+            </div>
+            <div class="program-card-content">
+              <div class="program-age-tagline">All Ages (6 &ndash; 18)</div>
+              <h3 class="program-card-headline">1-on-1 Precision Clinics</h3>
+              <p class="program-card-summary">
+                Bespoke, private technical training directly with Austin Berkley or Warren Berkley. Focused on position-specific mechanics, weak-foot striking, passing range, and explosive agility.
+              </p>
+              <div class="program-meta-chips-stack" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.35rem;">
+                  <strong class="text-gold">Format:</strong> 60-Minute Intensive Private Coaching
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                  <strong>Locations:</strong> Flexible Hub Venues (London/Kent)
+                </div>
+              </div>
+              <button type="button" class="hero-primary-pill-btn trigger-booking-modal" style="width: 100%; margin-top: 1.25rem; justify-content: center;">
+                <span>Book 1-on-1 Session</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Program 6: Goalkeeper Masterclass -->
+          <div class="program-display-card session-program-card" data-category="specialist">
+            <div class="program-card-thumb-wrap">
+              <img src="assets/images/u13_palace.jpg" alt="Goalkeeper Academy Clinics" class="program-card-thumb">
+              <span class="program-badge-floating" style="border-color: #ec1940; color: #ec1940;">Position Specific</span>
+            </div>
+            <div class="program-card-content">
+              <div class="program-age-tagline" style="color: #ec1940;">Ages 8 &ndash; 16 Years</div>
+              <h3 class="program-card-headline">Goalkeeper Masterclass</h3>
+              <p class="program-card-summary">
+                Specialized goalkeeper syllabus focusing on footwork distribution, diving mechanics, high claim handling, angle play, and 1v1 bravery guided by experienced specialist staff.
+              </p>
+              <div class="program-meta-chips-stack" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.35rem;">
+                  <strong class="text-gold">Schedule:</strong> Weekly Dedicated Specialty Slots
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                  <strong>Locations:</strong> Bromley Sports Ground 3G
+                </div>
+              </div>
+              <button type="button" class="hero-primary-pill-btn trigger-booking-modal" style="width: 100%; margin-top: 1.25rem; justify-content: center;">
+                <span>Book Goalkeeper Assessment</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. SCHOOLS COACHING PARTNERSHIPS (Dedicated Section)
+         ===================================================================== -->
+    <section class="schools-section" id="schools">
+      <div class="container">
+        <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+          <div class="section-eyebrow-pill" style="margin: 0 auto 1rem;">
+            <span>/</span>
+            <span>EDUCATIONAL PARTNERSHIPS</span>
+          </div>
+          <h2 class="section-title-large">Schools Coaching &amp; P.E. Delivery</h2>
+          <p class="section-subtitle-copy">
+            Tecnica FA Coaching Ltd partners with Primary and Secondary schools across West Wickham, Bromley, Beckenham, and South London to deliver inspiring P.E. curriculum lessons, PPA cover, and vibrant extracurricular football clubs.
+          </p>
+        </div>
+
+        <div class="schools-grid-3">
+          <!-- Card 1 -->
+          <div class="school-offering-card">
+            <div class="school-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <h3 class="school-offering-title">Curriculum P.E. &amp; PPA Cover</h3>
+            <p class="school-offering-desc">
+              High-quality Physical Education lessons aligned with National Curriculum standards, planned and taught by fully qualified, DBS-checked UEFA/FA coaches.
+            </p>
+            <ul class="school-feature-list">
+              <li class="school-feature-item">
+                <span class="school-feature-check">&check;</span>
+                Full termly lesson schemes of work
+              </li>
+              <li class="school-feature-item">
+                <span class="school-feature-check">&check;</span>
+                Inclusive learning for all ability levels
+              </li>
+              <li class="school-feature-item">
+                <span class="school-feature-check">&check;</span>
+                Reliable weekly teacher PPA cover
+              </li>
+              <li class="school-feature-item">
+                <span class="school-feature-check">&check;</span>
+                Pupil assessment &amp; progress reports
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="school-offering-card">
+            <div class="school-icon-wrap" style="background: rgba(255, 202, 5, 0.15); border-color: rgba(255, 202, 5, 0.3); color: #ffca05;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="school-offering-title">Breakfast &amp; After-School Clubs</h3>
+            <p class="school-offering-desc">
+              Energizing morning sessions and engaging after-school football clubs that boost school attendance, fitness, and team camaraderie.
+            </p>
+            <ul class="school-feature-list">
+              <li class="school-feature-item">
+                <span class="school-feature-check" style="color: #ffca05;">&check;</span>
+                Hassle-free online parent booking
+              </li>
+              <li class="school-feature-item">
+                <span class="school-feature-check" style="color: #ffca05;">&check;</span>
+                Healthy breakfast &amp; active warm-ups
+              </li>
+              <li class="school-feature-item">
+                <span class="school-feature-check" style="color: #ffca05;">&check;</span>
+                End-of-term medals &amp; certificates
+              </li>
+              <li class="school-feature-item">
+                <span class="school-feature-check" style="color: #ffca05;">&check;</span>
+                Zero administrative burden for school staff
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="school-offering-card">
+            <div class="school-icon-wrap" style="background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.3); color: #06b6d4;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 class="school-offering-title">School Teams &amp; Tournaments</h3>
+            <p class="school-offering-desc">
+              Tactical preparation for inter-school cups, friendly fixtures, and borough tournaments, instilling tactical teamwork and sportsmanship.
+            </p>
+            <ul class="school-feature-list">
+              <li class="school-feature-item">
+                <span class="school-feature-check" style="color: #06b6d4;">&check;</span>
+                School team squad coaching
+              </li>
+              <li class="school-feature-item">
+                <span class="school-feature-check" style="color: #06b6d4;">&check;</span>
+                Match day management &amp; refereeing
+              </li>
+              <li class="school-feature-item">
+                <span class="school-feature-check" style="color: #06b6d4;">&check;</span>
+                Hosting local school mini-festivals
+              </li>
+              <li class="school-feature-item">
+                <span class="school-feature-check" style="color: #06b6d4;">&check;</span>
+                Teacher CPD &amp; coaching workshops
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- School Enquiry CTA Banner -->
+        <div style="margin-top: 3.5rem; background: rgba(7, 21, 48, 0.7); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <h4 style="color: #fff; font-size: 1.25rem; margin-bottom: 0.35rem; font-family: var(--font-heading);">
+              Are You a School Headteacher or P.E. Coordinator?
+            </h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+              Contact us today for a free trial taster session at your school or custom PPA proposal.
+            </p>
+          </div>
+          <a href="#contact" class="hero-primary-pill-btn" style="padding: 0.75rem 1.6rem;">
+            <span>Request School Proposal</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6. TOURNAMENTS & SHOWCASE EVENTS (Pro Fixtures & Scouting)
+         ===================================================================== -->
+    <section class="tournaments-section" id="tournaments">
+      <div class="container">
+        <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+          <div class="section-eyebrow-pill" style="margin: 0 auto 1rem;">
+            <span>/</span>
+            <span>SCOUTED COMPETITION</span>
+          </div>
+          <h2 class="section-title-large">Tournaments &amp; Pro Showcases</h2>
+          <p class="section-subtitle-copy">
+            We bridge the gap between grassroots football and elite pro academy recruitment. Our showcase squads regularly play against Category 1 &amp; 2 professional academy teams.
+          </p>
+        </div>
+
+        <!-- Featured Match Card -->
+        <div class="showcase-featured-match">
+          <div>
+            <span class="pro-club-pill" style="background: rgba(255,202,5,0.2); border-color: #ffca05; color: #ffca05; margin-bottom: 1rem; display: inline-block;">
+              PREMIER LEAGUE SHOWCASE
+            </span>
+            <h3 style="font-family: var(--font-heading); font-size: 2rem; color: #fff; line-height: 1.2; margin-bottom: 1rem;">
+              Tecnica FA vs. Fulham FC Academy
+            </h3>
+            <p style="color: #cbd5e1; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem;">
+              Held at Fulham FC's official <strong>Motspur Park Training Ground</strong>. Our U12s and U14s showcased Coerver Dutch passing combinations and competitive tactical resilience against Premier League academy squads. Multiple players received scout invitations for formal academy trial periods.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <span class="fixture-verified-badge" style="background: rgba(16,185,129,0.2); color: #10b981; border: 1px solid #10b981; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;">
+                &check; Motspur Park Showcase
+              </span>
+              <span class="fixture-verified-badge" style="background: rgba(255,202,5,0.2); color: #ffca05; border: 1px solid #ffca05; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;">
+                Cat 1 Scouts Attending
+              </span>
+            </div>
+          </div>
+          <div>
+            <img src="assets/images/fulham_match_1.jpg" alt="Tecnica FA vs Fulham FC Academy Match" class="showcase-match-thumb">
+          </div>
+        </div>
+
+        <!-- Fixture Cards Stack -->
+        <div class="showcase-fixture-list">
+          <div class="showcase-fixture-row">
+            <div>
+              <span class="squad-mini-tag" style="color: #ffca05; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">U14s Showcase</span>
+              <h4 style="color: #fff; font-size: 1.15rem; margin: 0.25rem 0;">Tecnica FA vs. Crystal Palace Youths</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Beckenham Training Centre &bull; High Tempo Exhibition Match</p>
+            </div>
+            <span class="fixture-verified-badge" style="color: #10b981; font-size: 0.85rem; font-weight: 700;">Verified Exhibition</span>
+          </div>
+
+          <div class="showcase-fixture-row">
+            <div>
+              <span class="squad-mini-tag" style="color: #ffca05; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">U12s Showcase</span>
+              <h4 style="color: #fff; font-size: 1.15rem; margin: 0.25rem 0;">Tecnica FA vs. Charlton Athletic Academy</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Sparrows Lane Training Ground &bull; Technical Skill Showcase</p>
+            </div>
+            <span class="fixture-verified-badge" style="color: #10b981; font-size: 0.85rem; font-weight: 700;">Verified Exhibition</span>
+          </div>
+
+          <div class="showcase-fixture-row">
+            <div>
+              <span class="squad-mini-tag" style="color: #ffca05; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">U11s Cup Tournament</span>
+              <h4 style="color: #fff; font-size: 1.15rem; margin: 0.25rem 0;">South London Academy Cup &amp; Futsal Trophy</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Annual Elite Tournament &bull; Category 1 &amp; 2 Scout Presence</p>
+            </div>
+            <span class="fixture-verified-badge" style="color: #ffca05; font-size: 0.85rem; font-weight: 700;">Tournament Trophy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         7. GALLERY (Filterable Visual Proof)
+         ===================================================================== -->
+    <section class="gallery-page-container" id="gallery" style="padding: 6.5rem 0; background: var(--bg-primary);">
+      <div class="container">
+        <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+          <div class="section-eyebrow-pill" style="margin: 0 auto 1rem;">
+            <span>/</span>
+            <span>PHOTO ARCHIVE</span>
+          </div>
+          <h2 class="section-title-large">Action &amp; Match Gallery</h2>
+          <p class="section-subtitle-copy">
+            A glimpse into our high-energy training hubs, Premier League pro showcase fixtures, indoor Futsal mastery, and holiday day camps.
+          </p>
+
+          <!-- Gallery Filter Controls -->
+          <div class="gallery-filters-row" style="margin-top: 2rem;">
+            <button type="button" class="gallery-filter-pill is-active" data-gallery-category="all">All Photos</button>
+            <button type="button" class="gallery-filter-pill" data-gallery-category="matches">Pro Matches</button>
+            <button type="button" class="gallery-filter-pill" data-gallery-category="futsal">Futsal</button>
+            <button type="button" class="gallery-filter-pill" data-gallery-category="training">Coerver Training</button>
+            <button type="button" class="gallery-filter-pill" data-gallery-category="camps">Holiday Camps</button>
+          </div>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="gallery-masonry-grid" style="margin-top: 3rem;">
+          <!-- Item 1: Fulham Showcase -->
+          <div class="gallery-card-item" data-gallery-category="matches">
+            <div class="gallery-img-wrapper">
+              <img src="assets/images/fulham_match_1.jpg" alt="Showcase Match vs Fulham FC Academy" class="gallery-img">
+              <div class="gallery-hover-overlay">
+                <span class="gallery-badge-pill">Pro Fixture</span>
+                <div class="gallery-item-title">Showcase vs Fulham FC Academy</div>
+                <div class="gallery-item-location" style="color: #cbd5e1; font-size: 0.85rem;">Motspur Park Training Ground</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Crystal Palace Match -->
+          <div class="gallery-card-item" data-gallery-category="matches">
+            <div class="gallery-img-wrapper">
+              <img src="assets/images/u13_palace.jpg" alt="Match vs Crystal Palace Youths" class="gallery-img">
+              <div class="gallery-hover-overlay">
+                <span class="gallery-badge-pill">Youth League</span>
+                <div class="gallery-item-title">U13s Match vs Crystal Palace Youths</div>
+                <div class="gallery-item-location" style="color: #cbd5e1; font-size: 0.85rem;">Beckenham Sports Arena</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Futsal Session -->
+          <div class="gallery-card-item" data-gallery-category="futsal">
+            <div class="gallery-img-wrapper">
+              <img src="assets/images/futsal_session.jpg" alt="Indoor Brazilian Futsal Masterclass" class="gallery-img">
+              <div class="gallery-hover-overlay">
+                <span class="gallery-badge-pill" style="background: #06b6d4; color: #020712;">Futsal</span>
+                <div class="gallery-item-title">Indoor Ball Control &amp; Quick Passing</div>
+                <div class="gallery-item-location" style="color: #cbd5e1; font-size: 0.85rem;">West Wickham Sports Hall</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Coerver Training Drills -->
+          <div class="gallery-card-item" data-gallery-category="training">
+            <div class="gallery-img-wrapper">
+              <img src="assets/images/fulham_acad_6.jpg" alt="1-on-1 Coerver Technical Drills" class="gallery-img">
+              <div class="gallery-hover-overlay">
+                <span class="gallery-badge-pill">Coerver Drills</span>
+                <div class="gallery-item-title">1v1 Attacking &amp; Weak-Foot Finishing</div>
+                <div class="gallery-item-location" style="color: #cbd5e1; font-size: 0.85rem;">Bromley 3G Floodlit Hub</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Holiday Camp -->
+          <div class="gallery-card-item" data-gallery-category="camps">
+            <div class="gallery-img-wrapper">
+              <img src="assets/images/holiday_camp.jpg" alt="Holiday Day Camp Tournament" class="gallery-img">
+              <div class="gallery-hover-overlay">
+                <span class="gallery-badge-pill" style="background: #f59e0b; color: #020712;">Day Camp</span>
+                <div class="gallery-item-title">Half-Term Soccer Camp World Cup</div>
+                <div class="gallery-item-location" style="color: #cbd5e1; font-size: 0.85rem;">Pickhurst Rise Pitches</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Junior Squad Match -->
+          <div class="gallery-card-item" data-gallery-category="matches">
+            <div class="gallery-img-wrapper">
+              <img src="assets/images/fulham_match_2.jpg" alt="Junior Squad Match Action" class="gallery-img">
+              <div class="gallery-hover-overlay">
+                <span class="gallery-badge-pill">Junior Squad</span>
+                <div class="gallery-item-title">Foundation Squad Match Action</div>
+                <div class="gallery-item-location" style="color: #cbd5e1; font-size: 0.85rem;">West Wickham Hub</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div class="gallery-modal-overlay" id="galleryModal">
+      <div class="gallery-modal-box">
+        <button type="button" class="gallery-modal-close-btn" id="galleryModalClose" aria-label="Close modal">&times;</button>
+        <img src="" alt="" class="gallery-modal-img" id="galleryModalImg">
+        <div class="gallery-modal-info">
+          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.25rem;" id="galleryModalTitle"></h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" id="galleryModalDesc"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         8. PARENT TESTIMONIALS & SUCCESS STORIES
+         ===================================================================== -->
+    <section class="reviews-carousel-section" id="testimonials" style="padding: 6.5rem 0; background: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center" style="max-width: 800px; margin: 0 auto 3.5rem;">
+          <div class="section-eyebrow-pill" style="margin: 0 auto 1rem;">
+            <span>/</span>
+            <span>VERIFIED FEEDBACK</span>
+          </div>
+          <h2 class="section-title-large">What South London Parents Say</h2>
+          <p class="section-subtitle-copy">
+            Hear from families across Bromley, West Wickham, and Beckenham whose children have transformed their confidence, technical skills, and love for football.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+          <div class="testimonial-card-modern" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-lg); padding: 2rem;">
+            <div style="color: #ffca05; font-size: 1.1rem; margin-bottom: 1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; font-style: italic; margin-bottom: 1.5rem;">
+              &ldquo;My son joined Tecnica at age 8 with lots of energy but zero tactical discipline. Within 6 months under Austin and Warren, his ball mastery and weak-foot striking improved dramatically. He was recently invited for a trial with a pro London academy!&rdquo;
+            </p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
+              <strong style="color: #fff; display: block;">David M.</strong>
+              <span style="color: var(--text-muted); font-size: 0.85rem;">Parent of U11 Player &bull; West Wickham</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card-modern" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-lg); padding: 2rem;">
+            <div style="color: #ffca05; font-size: 1.1rem; margin-bottom: 1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; font-style: italic; margin-bottom: 1.5rem;">
+              &ldquo;The Futsal sessions are exceptional. My daughter was struggling to protect the ball in tight spaces. Playing on the indoor court with the low-bounce ball taught her sole-control and fast decision-making. Highly recommend Tecnica Coaching Ltd.&rdquo;
+            </p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
+              <strong style="color: #fff; display: block;">Sarah T.</strong>
+              <span style="color: var(--text-muted); font-size: 0.85rem;">Parent of U10 Player &bull; Beckenham</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card-modern" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-lg); padding: 2rem;">
+            <div style="color: #ffca05; font-size: 1.1rem; margin-bottom: 1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; font-style: italic; margin-bottom: 1.5rem;">
+              &ldquo;Austin Berkley has a rare gift for coaching children. He is firm, encouraging, and deeply knowledgeable. Having a coach who played professionally and managed Crystal Palace Youths gives our children authentic academy-level coaching.&rdquo;
+            </p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
+              <strong style="color: #fff; display: block;">Marcus K.</strong>
+              <span style="color: var(--text-muted); font-size: 0.85rem;">Parent of U14 Player &bull; Bromley</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         9. FREQUENTLY ASKED QUESTIONS (FAQ Accordion)
+         ===================================================================== -->
+    <section class="faq-accordion-section" id="faq" style="padding: 6.5rem 0; background: var(--bg-tertiary);">
+      <div class="container">
+        <div class="text-center" style="max-width: 800px; margin: 0 auto 3rem;">
+          <div class="section-eyebrow-pill" style="margin: 0 auto 1rem;">
+            <span>/</span>
+            <span>PARENT GUIDANCE</span>
+          </div>
+          <h2 class="section-title-large">Frequently Asked Questions</h2>
+          <p class="section-subtitle-copy">
+            Everything you need to know about our coaching syllabus, session bookings, and the distinction between Coaching Ltd and our community club.
+          </p>
+        </div>
+
+        <div style="max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+          
+          <div class="faq-item-card is-open">
+            <button type="button" class="faq-question-btn" aria-expanded="true">
+              <span>What is the difference between Tecnica FA Coaching Ltd and Tecnica Football Academy CIC?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                <strong>Tecnica FA Coaching Ltd</strong> is our specialized coaching organization responsible for midweek academy technical hubs, Futsal masterclasses, primary/secondary school partnerships, 1-on-1 coaching, and holiday day camps. <br><br>
+                <strong>Tecnica Football Academy CIC</strong> is our FA Charter Standard Community Interest Club that manages our competitive weekend league teams (U7s to U15s) competing in Sunday junior leagues.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item-card">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>What qualifications do your coaches hold?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                Our Director of Coaching, Austin Berkley, holds the prestigious <strong>UEFA B License and FA Level 3 qualification</strong> and previously managed within the <strong>Crystal Palace FC Youth Academy</strong>. All coaches hold verified FA coaching badges, enhanced DBS checks, FA First Aid, and FA Safeguarding Children certifications.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item-card">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>How does the free assessment trial work?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                When you register your child for an assessment trial, they will join an age-appropriate weekly development or futsal hub session. Our coaches evaluate their ball control, listening, speed of movement, and attitude in a welcoming, low-pressure environment. Following the session, we provide personalized feedback and recommended squad placement.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item-card">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>What footwear and equipment is required?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                For our outdoor 3G synthetic pitches (Bromley &amp; Shirley), players should wear moulded studs or astro turf trainers (no metal studs). For indoor Futsal sessions, clean, non-marking indoor trainers or futsal shoes are required. Shin guards and plenty of water are mandatory for all sessions.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item-card">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>Do you partner with local schools for PPA cover?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                Yes! We deliver curriculum P.E. lessons, PPA teacher cover, breakfast clubs, and after-school clubs to primary and secondary schools across West Wickham, Beckenham, and Bromley. Please contact Warren Berkley directly at <strong>07456 528 812</strong> for a school proposal.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         10. CONTACT US & SESSION BOOKING (Interactive Form & Hubs)
+         ===================================================================== -->
+    <section class="trial-booking-section" id="contact" style="padding: 6.5rem 0; background: var(--bg-primary);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1.25fr; gap: 3.5rem; align-items: start;">
+          
+          <!-- Contact Details & Hubs -->
+          <div>
+            <div class="section-eyebrow-pill">
+              <span>/</span>
+              <span>GET IN TOUCH</span>
+            </div>
+            <h2 class="section-title-large">Contact Tecnica FA Coaching Ltd</h2>
+            <p class="narrative-body-text" style="margin-bottom: 2rem;">
+              Have a question about our academy hubs, school programs, futsal clinics, or want to speak with our coaching directors? We would love to hear from you.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 1.25rem;">
+                <div style="color: #ffca05; margin-top: 0.2rem;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div>
+                  <strong style="color: #fff; display: block; font-size: 1rem;">Warren Berkley (Head of Operations)</strong>
+                  <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
+                    Mobile: <a href="tel:07456528812" style="color: #ffca05; font-weight: 600;">07456 528 812</a><br>
+                    Direct Office: <a href="tel:07590046769" style="color: #ffca05; font-weight: 600;">07590 046 769</a><br>
+                    Email: <a href="mailto:warren@tecnicafa.com" style="color: #ffca05;">warren@tecnicafa.com</a>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 1.25rem;">
+                <div style="color: #ffca05; margin-top: 0.2rem;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <strong style="color: #fff; display: block; font-size: 1rem;">Headquarters &amp; Mailing Address</strong>
+                  <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
+                    228 &ndash; 230 Pickhurst Rise<br>
+                    West Wickham, Kent BR4 0AU, United Kingdom
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 1.25rem;">
+                <div style="color: #10b981; margin-top: 0.2rem;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                </div>
+                <div>
+                  <strong style="color: #fff; display: block; font-size: 1rem;">Coaching Hub Grounds</strong>
+                  <div style="color: var(--text-muted); font-size: 0.88rem; margin-top: 0.25rem; line-height: 1.5;">
+                    &bull; West Wickham (Pickhurst Rise Pitches)<br>
+                    &bull; Bromley (Bishop Justus School 3G)<br>
+                    &bull; Beckenham (Goals Soccer Complex &amp; Kent County Ground)<br>
+                    &bull; Shirley (Coloma 3G Pitch)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Booking & Enquiry Form -->
+          <div class="trial-form-card" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--card-shadow);">
+            <div style="margin-bottom: 1.75rem;">
+              <span class="squad-mini-tag" style="color: #ffca05; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Instant Registration</span>
+              <h3 style="font-family: var(--font-heading); color: #fff; font-size: 1.85rem; margin-top: 0.25rem;">
+                Book an Assessment / Trial Session
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.25rem;">
+                Complete the details below and our academy operations team will confirm your session time within 24 hours.
+              </p>
+            </div>
+
+            <form id="trialBookingForm">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div>
+                  <label for="parentName" style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">Parent / Guardian Name *</label>
+                  <input type="text" id="parentName" class="form-input-modern" placeholder="e.g. Sarah Jenkins" required style="width: 100%; box-sizing: border-box;">
+                </div>
+                <div>
+                  <label for="childName" style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">Player Name *</label>
+                  <input type="text" id="childName" class="form-input-modern" placeholder="e.g. Leo Jenkins" required style="width: 100%; box-sizing: border-box;">
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div>
+                  <label for="parentPhone" style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">Phone Number *</label>
+                  <input type="tel" id="parentPhone" class="form-input-modern" placeholder="e.g. 07456 528 812" required style="width: 100%; box-sizing: border-box;">
+                </div>
+                <div>
+                  <label for="parentEmail" style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">Email Address</label>
+                  <input type="email" id="parentEmail" class="form-input-modern" placeholder="e.g. sarah@example.com" style="width: 100%; box-sizing: border-box;">
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div>
+                  <label for="ageGroup" style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">Age Group *</label>
+                  <select id="ageGroup" class="form-input-modern" required style="width: 100%; box-sizing: border-box;">
+                    <option value="" disabled selected>Select Player Age</option>
+                    <option value="Mini Kickers (Ages 4-6)">Mini Kickers (Ages 4 - 6)</option>
+                    <option value="Under 7s - Under 9s">Under 7s - Under 9s (Ages 6 - 9)</option>
+                    <option value="Under 10s - Under 12s">Under 10s - Under 12s (Ages 9 - 12)</option>
+                    <option value="Under 13s - Under 15s">Under 13s - Under 15s (Ages 12 - 15)</option>
+                    <option value="Under 16+">Under 16+ (Youth Advanced)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="hubLocation" style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">Preferred Hub Location *</label>
+                  <select id="hubLocation" class="form-input-modern" required style="width: 100%; box-sizing: border-box;">
+                    <option value="" disabled selected>Select Hub Location</option>
+                    <option value="West Wickham Hub (Pickhurst Rise)">West Wickham (Pickhurst Rise)</option>
+                    <option value="Bromley Hub (Bishop Justus 3G)">Bromley (Bishop Justus 3G)</option>
+                    <option value="Beckenham Hub (Goals 3G / Sports Hall)">Beckenham (Goals / Kent Ground)</option>
+                    <option value="Shirley Hub (Coloma 3G)">Shirley (Coloma 3G)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 1rem;">
+                <label for="sessionType" style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">Program of Interest</label>
+                <select id="sessionType" class="form-input-modern" style="width: 100%; box-sizing: border-box;">
+                  <option value="Academy Development Hub">Academy Development Hub (Midweek 3G)</option>
+                  <option value="Indoor Futsal Mastery">Indoor Futsal Mastery Clinic</option>
+                  <option value="Mini Tecnica (Ages 4-6)">Mini Tecnica Kickers</option>
+                  <option value="Half-Term Holiday Camp">Half-Term / Holiday Day Soccer Camp</option>
+                  <option value="1-on-1 Precision Masterclass">1-on-1 Precision Masterclass</option>
+                  <option value="Schools Partnership Enquiry">Schools Partnership Enquiry</option>
+                </select>
+              </div>
+
+              <div style="margin-bottom: 1.5rem;">
+                <label for="notes" style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">Additional Notes (Playing experience, position, etc.)</label>
+                <textarea id="notes" rows="3" class="form-input-modern" placeholder="e.g. Currently plays for local grassroots team, wants to improve weak foot and 1v1 speed..." style="width: 100%; box-sizing: border-box; resize: vertical;"></textarea>
+              </div>
+
+              <button type="submit" class="hero-primary-pill-btn" style="width: 100%; justify-content: center; font-size: 1.05rem; padding: 0.95rem;">
+                <span>Submit Assessment Request</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Confirmation Modal -->
+    <div class="gallery-modal-overlay" id="bookingSuccessModal">
+      <div class="gallery-modal-box" style="max-width: 540px; padding: 2.5rem; text-align: center;">
+        <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(16, 185, 129, 0.2); border: 2px solid #10b981; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; color: #10b981;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="color: #fff; font-size: 1.75rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">
+          Trial Assessment Requested!
+        </h3>
+        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+          Thank you! We have received your booking details for <strong id="modalPlayerName" class="text-gold">Player</strong> at the <strong id="modalHub">Selected Hub</strong>. Our Academy Operations Director will reach out to <strong id="modalParentPhone">Your Phone</strong> shortly to confirm the scheduled date and kit instructions.
+        </p>
+        <button type="button" class="hero-primary-pill-btn" id="closeSuccessModalBtn" style="margin: 0 auto;">
+          <span>Return to Homepage</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast-success-banner" id="toastSuccess">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <div>
+        <strong style="display: block; font-size: 0.95rem;">Request Sent Successfully</strong>
+        <span style="font-size: 0.85rem; opacity: 0.9;">Warren Berkley will contact you within 24 hours.</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- =====================================================================
+       FOOTER (Cross-linking, Club Shop & Legal)
+       ===================================================================== -->
+  <footer class="site-footer-modern" style="background: var(--footer-bg); border-top: 1px solid rgba(255,255,255,0.08); padding: 5rem 0 2.5rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem;">
+        
+        <!-- Column 1: Brand & Credentials -->
+        <div>
+          <a href="#home" class="brand-logo-cluster" style="margin-bottom: 1.25rem; display: inline-flex;">
+            <img src="assets/logo_transparent.png" alt="Tecnica FA Crest" class="brand-crest-img">
+            <div class="brand-text-column">
+              <span class="brand-title-main">TECNICA <span class="text-gold">FA</span></span>
+              <span class="brand-subtitle-line">Coaching Ltd</span>
+            </div>
+          </a>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1.5rem;">
+            Specialized elite football training hubs, Futsal masterclasses, and school partnerships across South London. Combining the Dutch Coerver technique with the English FA pathway under UEFA B Director Austin Berkley.
+          </p>
+          <div class="fa-charter-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>FA Charter Standard Accredited</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Coaching Ltd Links (Project 2 Structure) -->
+        <div>
+          <h4 style="color: #fff; font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 1.25rem;">
+            Coaching Structure
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.9rem;">
+            <li><a href="#home" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;">1. Home Overview</a></li>
+            <li><a href="#about" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;">2. About Directors</a></li>
+            <li><a href="#philosophy" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;">3. Coerver Philosophy</a></li>
+            <li><a href="#sessions" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;">4. Academy Sessions</a></li>
+            <li><a href="#schools" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;">5. Schools Coaching</a></li>
+            <li><a href="#tournaments" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;">6. Pro Showcases</a></li>
+            <li><a href="#gallery" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;">7. Gallery Archive</a></li>
+            <li><a href="#contact" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;">8. Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Partner Sites & Community Club -->
+        <div>
+          <h4 style="color: #fff; font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 1.25rem;">
+            Club Ecosystem
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
+            <li>
+              <a href="https://www.tecnicafa.com/" style="color: #ffca05; font-weight: 600; text-decoration: none;" target="_blank" rel="noopener">
+                &rarr; Tecnica FA CIC (Main Club)
+              </a>
+              <span style="display: block; font-size: 0.8rem; color: var(--text-dim);">League teams U7s &ndash; U15s &amp; trials</span>
+            </li>
+            <li>
+              <a href="https://www.prokituk.com/" style="color: #ffca05; font-weight: 600; text-decoration: none;" target="_blank" rel="noopener">
+                &rarr; Official Club Shop (ProkitUK)
+              </a>
+              <span style="display: block; font-size: 0.8rem; color: var(--text-dim);">Match kits, training wear &amp; gear</span>
+            </li>
+            <li>
+              <a href="#contact" style="color: #10b981; font-weight: 600; text-decoration: none;">
+                &rarr; Book a Trial Assessment
+              </a>
+              <span style="display: block; font-size: 0.8rem; color: var(--text-dim);">Free taster session for new players</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Location Hubs -->
+        <div>
+          <h4 style="color: #fff; font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 1.25rem;">
+            Training Hubs
+          </h4>
+          <div style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
+            <p style="margin-bottom: 0.6rem;"><strong style="color: #fff;">West Wickham:</strong> Pickhurst Rise, Kent BR4 0AU</p>
+            <p style="margin-bottom: 0.6rem;"><strong style="color: #fff;">Bromley:</strong> Bishop Justus School 3G</p>
+            <p style="margin-bottom: 0.6rem;"><strong style="color: #fff;">Beckenham:</strong> Goals 3G Complex</p>
+            <p style="margin-bottom: 0.6rem;"><strong style="color: #fff;">Shirley:</strong> Coloma 3G Arena</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Legal & SEO Bar -->
+      <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--text-dim);">
+        <div>
+          &copy; 2026 Tecnica FA Coaching Ltd &bull; Registered in England &amp; Wales &bull; All Rights Reserved.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#privacy" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a>
+          <a href="#safeguarding" style="color: var(--text-dim); text-decoration: none;">FA Safeguarding Policy</a>
+          <a href="#terms" style="color: var(--text-dim); text-decoration: none;">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+`;
+
+fs.writeFileSync('tecnica.html', htmlContent, 'utf8');
+fs.writeFileSync('index.html', htmlContent, 'utf8');
+console.log('Written tecnica.html and index.html successfully!');

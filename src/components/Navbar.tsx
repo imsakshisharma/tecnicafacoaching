@@ -2,11 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,16 +20,21 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Programs', href: '#programs' },
-    { label: 'Philosophy', href: '#philosophy' },
-    { label: 'Schools', href: '#schools' },
-    { label: 'Showcases', href: '#showcases' },
-    { label: 'About', href: '#about' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Programs', href: '/programs' },
+    { label: 'Philosophy', href: '/philosophy' },
+    { label: 'Schools', href: '/schools' },
+    { label: 'Showcases', href: '/showcases' },
+    { label: 'About', href: '/about' },
+    { label: 'Gallery', href: '/gallery' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Contact', href: '/contact' },
   ];
+
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
+  };
 
   return (
     <header
@@ -39,7 +47,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         
         {/* Brand Logo & Title with Blue Crest Logo on Pure White */}
-        <a href="#home" className="flex items-center gap-3.5 group">
+        <Link href="/" className="flex items-center gap-3.5 group">
           <div className="relative w-12 h-12 flex-shrink-0">
             <Image
               src="/assets/logo-blue.svg"
@@ -62,30 +70,37 @@ export default function Navbar() {
               Elite Football &amp; Futsal
             </span>
           </div>
-        </a>
+        </Link>
 
-        {/* Desktop Navigation Links (Light, Modern Navy Style) */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full text-navy-950 hover:text-navy-700 hover:bg-slate-100/80 transition-all duration-200"
-            >
-              {link.label}
-            </a>
-          ))}
+        {/* Desktop Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`font-heading font-bold text-sm tracking-wide uppercase px-3.5 py-1.5 rounded-full transition-all duration-200 ${
+                  active
+                    ? 'bg-navy-950 text-white shadow-xs'
+                    : 'text-navy-950 hover:text-navy-700 hover:bg-slate-100/80'
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Action Button & Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <a
-            href="#contact"
-            className="hidden sm:inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-200 hover:bg-gold-500 hover:text-navy-950"
+          <Link
+            href="/contact"
+            className="hidden sm:inline-flex items-center gap-2 bg-navy-900 hover:bg-gold-500 hover:text-navy-950 text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
           >
             <span>Book Assessment</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
 
           {/* Mobile Hamburger Button */}
           <button
@@ -102,25 +117,32 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl px-4 py-4 animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="font-heading font-bold text-base uppercase px-3 py-2.5 rounded-xl text-navy-950 hover:bg-slate-100 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`font-heading font-bold text-base uppercase px-3.5 py-2.5 rounded-xl transition-colors ${
+                    active
+                      ? 'bg-navy-950 text-white'
+                      : 'text-navy-950 hover:bg-slate-100'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <div className="pt-3 border-t border-slate-100 mt-2">
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-950 font-heading font-bold uppercase tracking-wider py-3 rounded-xl shadow-md text-sm"
               >
                 <span>Book Free Assessment Trial</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

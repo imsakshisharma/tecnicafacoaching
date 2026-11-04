@@ -1,0 +1,2 @@
+"These fixtures validate our philosophy,"
+"What makes a scout take notes on a player?"
